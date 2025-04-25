@@ -11,11 +11,13 @@ export function Comment({content, onDeleteComment}){
         onDeleteComment(content)
     }
 
+    //SEMPRE QUE FOR ATUALIZAR UMA INFORMAÇÃO E ELA DEPENDE DO VALOR QUE ELA TINHA ANTES
     function handleLikeComment(){
-        setLikeCount(likeCount+1);
+        setLikeCount((state)=>{
+            return state + 1
+        });
     }
-
-
+    
 
     return (
         <div className={styles.comment}>
